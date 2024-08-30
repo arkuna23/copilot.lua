@@ -1,10 +1,7 @@
 name: Update copilot/dist
 
 on:
-  schedule:
-    - cron: '0 0 * * *'
-  push:
-    branches: [master]
+  workflow-dispatch:
 
 jobs:
   update_copilot_dist:
@@ -28,10 +25,10 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          add-paths: "copilot/dist/*"
+          add-paths: 'copilot/dist/*'
           author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
-          base: master
+          base: pr
           branch: create-pull-request/update-copilot-dist
-          commit-message: "feat: update to latest copilot.vim/dist"
-          reviewers: MunifTanjim,zbirenbaum
-          title: "Update copilot.vim/dist"
+          commit-message: 'feat: update to latest copilot.vim/dist'
+          reviewers: arkuna23
+          title: 'Update copilot.vim/dist'
