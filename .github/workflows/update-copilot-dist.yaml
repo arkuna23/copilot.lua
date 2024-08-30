@@ -1,7 +1,7 @@
 name: Update copilot/dist
 
 on:
-  workflow-dispatch:
+  workflow_dispatch:
 
 jobs:
   update_copilot_dist:
